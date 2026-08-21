@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProspectIntelligenceDossierV1",
+  "description": "Standardized, versioned contract for 10-layer OSINT research dossiers emitted by Prospect Intelligence OS.",
+  "type": "object",
+  "required": [
+    "domain",
+    "company_name",
+    "overall_grounding_confidence",
+    "confidence_breakdown",
+    "evidence_provenance",
+    "layer_1_whois_rdap",
+    "layer_2_dns_security",
+    "layer_3_network_infra",
+    "layer_4_ssl_cert",
+    "layer_5_headers_fingerprint",
+    "layer_6_tech_stack",
+    "layer_7_marketing_pixels",
+    "layer_8_site_structure",
+    "layer_9_github_signals",
+    "layer_10_signal_grounded_angles"
+  ],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "Clean root domain of the target company (e.g. 'vercel.com')."
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Normalized company name."
+    },
+    "overall_grounding_confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Weighted FPG factual grounding confidence score."
+    },
+    "confidence_breakdown": {
+      "type": "object",
+      "description": "Per-layer confidence scores (0.0 to 1.0).",
+      "properties": {
+        "overall_grounding": { "type": "number" },
+        "layer_1_whois": { "type": "number" },
+        "layer_2_dns_security": { "type": "number" },
+        "layer_3_network": { "type": "number" },
+        "layer_4_ssl_tls": { "type": "number" },
+        "layer_5_headers_cdn": { "type": "number" },
+        "layer_6_tech_stack": { "type": "number" },
+        "layer_7_marketing": { "type": "number" },
+        "layer_8_site_structure": { "type": "number" },
+        "layer_9_github_dev": { "type": "number" }
+      }
+    },
+    "evidence_provenance": {
+      "type": "object",
+      "description": "Provenance metadata identifying source scanners and verification status per layer."
+    },
+    "layer_1_whois_rdap": {
+      "type": "object",
+      "properties": {
+        "domain": { "type": "string" },
+        "registrar": { "type": "string" },
+        "creation_date": { "type": "string" },
+        "name_servers": { "type": "array", "items": { "type": "string" } },
+        "registrant_org": { "type": "string" }
+      }
+    },
+    "layer_2_dns_security": {
+      "type": "object",
+      "properties": {
+        "domain": { "type": "string" },
+        "mx_records": { "type": "array", "items": { "type": "string" } },
+        "email_provider": { "type": "string" },
+        "spf": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string" },
+            "record": { "type": "string" },
+            "lookup_count": { "type": "integer" }
+          }
+        },
+        "dmarc": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string" },
+            "policy": { "type": "string" },
+            "record": { "type": "string" }
+          }
+        },
+        "dkim_selectors_found": { "type": "array", "items": { "type": "string" } },
+        "has_ipv6": { "type": "boolean" }
+      }
+    },
+    "layer_3_network_infra": {
+      "type": "object",
+      "properties": {
+        "ip_addresses": { "type": "array", "items": { "type": "string" } },
+        "open_ports": { "type": "array", "items": { "type": "integer" } },
+        "cpes": { "type": "array", "items": { "type": "string" } },
+        "vulns": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "layer_4_ssl_cert": {
+      "type": "object",
+      "properties": {
+        "ssl_active": { "type": "boolean" },
+        "tls_version": { "type": "string" },
+        "cipher_suite": { "type": "string" },
+        "issuer_org": { "type": "string" },
+        "issuer_common_name": { "type": "string" }
+      }
+    },
+    "layer_5_headers_fingerprint": {
+      "type": "object",
+      "properties": {
+        "server_banner": { "type": "string" },
+        "detected_cdn": { "type": "array", "items": { "type": "string" } },
+        "hosting_platform": { "type": "string" },
+        "security_posture_score": { "type": "integer" }
+      }
+    },
+    "layer_6_tech_stack": {
+      "type": "object",
+      "properties": {
+        "cms": { "type": "string" },
+        "frontend_frameworks": { "type": "array", "items": { "type": "string" } },
+        "ui_libraries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "layer_7_marketing_pixels": {
+      "type": "object",
+      "properties": {
+        "runs_paid_ads": { "type": "boolean" },
+        "detected_pixels": { "type": "array", "items": { "type": "string" } },
+        "marketing_stack": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "layer_8_site_structure": {
+      "type": "object",
+      "properties": {
+        "page_title": { "type": "string" },
+        "meta_description": { "type": "string" },
+        "json_ld_types": { "type": "array", "items": { "type": "string" } },
+        "has_robots_txt": { "type": "boolean" },
+        "has_sitemap_xml": { "type": "boolean" }
+      }
+    },
+    "layer_9_github_signals": {
+      "type": "object",
+      "properties": {
+        "public_repos": { "type": "integer" },
+        "top_languages": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "layer_10_signal_grounded_angles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pillar", "factual_trigger", "angle_thesis", "sample_hook"],
+        "properties": {
+          "pillar": { "type": "string" },
+          "factual_trigger": { "type": "string" },
+          "angle_thesis": { "type": "string" },
+          "sample_hook": { "type": "string" }
+        }
+      }
+    }
+  }
+}

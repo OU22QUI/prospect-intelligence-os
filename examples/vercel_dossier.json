@@ -1,0 +1,228 @@
+{
+  "domain": "vercel.com",
+  "company_name": "Vercel",
+  "overall_grounding_confidence": 0.95,
+  "confidence_breakdown": {
+    "overall_grounding": 0.95,
+    "layer_1_whois": 0.98,
+    "layer_2_dns_security": 0.98,
+    "layer_3_network": 0.98,
+    "layer_4_ssl_tls": 0.98,
+    "layer_5_headers_cdn": 0.95,
+    "layer_6_tech_stack": 0.92,
+    "layer_7_marketing": 0.8,
+    "layer_8_site_structure": 0.95,
+    "layer_9_github_dev": 0.98
+  },
+  "evidence_provenance": {
+    "layer_1_whois": {
+      "source": "RDAP",
+      "status": "VERIFIED"
+    },
+    "layer_2_dns_security": {
+      "source": "Authoritative DNS (dnspython)",
+      "status": "VERIFIED"
+    },
+    "layer_3_network": {
+      "source": "Socket / Shodan InternetDB",
+      "status": "VERIFIED"
+    },
+    "layer_4_ssl_tls": {
+      "source": "Native TLS Handshake Context",
+      "status": "VERIFIED"
+    },
+    "layer_5_headers_cdn": {
+      "source": "HTTP Response Headers",
+      "status": "VERIFIED"
+    },
+    "layer_6_tech_stack": {
+      "source": "DOM & Script Signature Analysis",
+      "status": "VERIFIED"
+    },
+    "layer_7_marketing": {
+      "source": "HTML Pixel Regex Matcher",
+      "status": "NO_PIXELS_DETECTED"
+    },
+    "layer_8_site_structure": {
+      "source": "BeautifulSoup4 HTML/JSON-LD Parser",
+      "status": "VERIFIED"
+    },
+    "layer_9_github_dev": {
+      "source": "GitHub Org REST API",
+      "status": "VERIFIED"
+    }
+  },
+  "layer_1_whois_rdap": {
+    "domain": "vercel.com",
+    "registrar": "Amazon Registrar, Inc.",
+    "creation_date": "1999-10-04",
+    "name_servers": [
+      "a.zeit-world.co.uk",
+      "b.zeit-world.org",
+      "e.zeit-world.com",
+      "f.zeit-world.net"
+    ],
+    "registrant_org": "Privacy Protected",
+    "query_source": "RDAP"
+  },
+  "layer_2_dns_security": {
+    "domain": "vercel.com",
+    "mx_records": [
+      "alt1.aspmx.l.google.com",
+      "alt2.aspmx.l.google.com",
+      "aspmx2.googlemail.com",
+      "aspmx3.googlemail.com",
+      "aspmx.l.google.com"
+    ],
+    "email_provider": "Google Workspace",
+    "spf": {
+      "status": "valid",
+      "record": "v=spf1 include:_netblocks.google.com include:_netblocks2.google.com include:_netblocks3.google.com include:mktomail.com include:amazonses.com include:sendgrid.net include:_spf.salesforce.com include:spf.mtasv.net ~all",
+      "lookup_count": 8,
+      "has_all_qualifier": true
+    },
+    "dmarc": {
+      "status": "configured",
+      "policy": "quarantine",
+      "record": "v=DMARC1; p=quarantine; rua=mailto:df9481016e14030@rep.dmarcanalyzer.com; ruf=mailto:df9481016e14030@for.dmarcanalyzer.com; pct=100; fo=1;"
+    },
+    "dkim_selectors_found": [
+      "google",
+      "k1",
+      "s1"
+    ],
+    "has_ipv6": true,
+    "caa_records": [
+      "0 issue \"pki.goog\"",
+      "0 issue \"letsencrypt.org\"",
+      "0 issue \"globalsign.com\"",
+      "0 issue \"sectigo.com\""
+    ]
+  },
+  "layer_3_network_infra": {
+    "domain": "vercel.com",
+    "ip_addresses": [
+      "64.239.109.65",
+      "64.239.109.193"
+    ],
+    "reverse_dns": [],
+    "open_ports": [
+      80,
+      443
+    ],
+    "cpes": [],
+    "vulns": [],
+    "hostnames": [
+      "websiterequest.diageo.com",
+      "8095999612dcaa34.vercel-dns-016.com",
+      "vercel-dns-016.com"
+    ],
+    "tags": [],
+    "shodan_accessible": true
+  },
+  "layer_4_ssl_cert": {
+    "domain": "vercel.com",
+    "ssl_active": true,
+    "tls_version": "TLSv1.3",
+    "cipher_suite": "TLS_AES_128_GCM_SHA256",
+    "issuer_org": "Let's Encrypt",
+    "issuer_common_name": "YR2",
+    "valid_from": "Jul 24 06:47:26 2026 GMT",
+    "valid_until": "Oct 22 06:47:25 2026 GMT",
+    "subject_alt_names": [
+      "*.vercel.com",
+      "vercel.com"
+    ]
+  },
+  "layer_5_headers_fingerprint": {
+    "domain": "vercel.com",
+    "status_code": 200,
+    "server_banner": "Vercel",
+    "detected_cdn": [],
+    "hosting_platform": "Vercel",
+    "framework_header": null,
+    "security_headers": {
+      "strict_transport_security": true,
+      "content_security_policy": true,
+      "x_frame_options": true,
+      "x_content_type_options": true,
+      "referrer_policy": true,
+      "permissions_policy": false
+    },
+    "security_posture_score": 83,
+    "raw_interesting_headers": {
+      "server": "Vercel",
+      "x-powered-by": "Next.js, Payload",
+      "x-vercel-id": "cdg1::iad1::j45bk-1787322047915-67ef1ecee1d3"
+    }
+  },
+  "layer_6_tech_stack": {
+    "domain": "vercel.com",
+    "cms": "Custom / Headless",
+    "frontend_frameworks": [
+      "Next.js / React"
+    ],
+    "ui_libraries": [],
+    "backend_signals": [],
+    "ecommerce": null
+  },
+  "layer_7_marketing_pixels": {
+    "runs_paid_ads": false,
+    "detected_pixels": [],
+    "marketing_stack": [],
+    "tag_manager_present": false
+  },
+  "layer_8_site_structure": {
+    "domain": "vercel.com",
+    "page_title": "Agentic Infrastructure - Vercel",
+    "meta_description": "The autonomous stack for every app and agent.",
+    "og_title": "Agentic Infrastructure - Vercel",
+    "og_description": "The autonomous stack for every app and agent.",
+    "og_image": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png",
+    "json_ld_types": [
+      "SoftwareApplication"
+    ],
+    "core_headings": [
+      "Agentic Infrastructure",
+      "Build agents on infrastructure that thinks like them",
+      "Ship apps that scale from zero to millions instantly",
+      "Host platforms that serve every customer",
+      "Recently shipped",
+      "Built by you, or your agents"
+    ],
+    "has_robots_txt": true,
+    "has_sitemap_xml": true,
+    "canonical_url": "https://vercel.com"
+  },
+  "layer_9_github_signals": {
+    "org_name": "vercel",
+    "public_repos": 240,
+    "top_languages": [
+      "TypeScript",
+      "JavaScript",
+      "Go",
+      "Rust",
+      "Shell"
+    ]
+  },
+  "layer_10_signal_grounded_angles": [
+    {
+      "pillar": "Infrastructure Integration & Mail Flow",
+      "factual_trigger": "Domain operates on Google Workspace with strict DMARC QUARANTINE policy (google, k1 selectors).",
+      "angle_thesis": "Hardened mail security postures require zero-friction DKIM/SPF alignment when integrating external workflow automation.",
+      "sample_hook": "Noticed Vercel maintains a hardened Google Workspace setup with strict DMARC QUARANTINE enforcement. When connecting external data or enrichment tooling into your workflow, how do you handle DKIM selector alignment without compromising sender reputation?"
+    },
+    {
+      "pillar": "Organic B2B Account Intelligence",
+      "factual_trigger": "Zero third-party ad tracking pixels or retargeting scripts detected on vercel.com.",
+      "angle_thesis": "Reliance on organic positioning means targeted direct account selection is the primary driver for high-value client acquisition.",
+      "sample_hook": "Checked vercel.com's front-end tracking—looks like Vercel relies purely on organic positioning rather than heavy paid ad pixels. How is your team currently identifying in-market accounts before they land on your site?"
+    },
+    {
+      "pillar": "Developer Velocity & Technical Stack",
+      "factual_trigger": "Active public GitHub organization with 240 public repositories (primary languages: TypeScript, JavaScript).",
+      "angle_thesis": "High public engineering velocity indicates a developer-first culture that values structured JSON schemas and API-first tooling.",
+      "sample_hook": "Noticed Vercel's GitHub org has 240 public repos with heavy TypeScript, JavaScript activity. Is your engineering team maintaining custom internal scrapers for account intelligence, or leveraging structured schema-validated APIs?"
+    }
+  ]
+}

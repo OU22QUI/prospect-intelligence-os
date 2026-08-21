@@ -1,0 +1,227 @@
+{
+  "domain": "smartbugmedia.com",
+  "company_name": "SmartBug Media",
+  "overall_grounding_confidence": 0.9,
+  "confidence_breakdown": {
+    "overall_grounding": 0.9,
+    "layer_1_whois": 0.98,
+    "layer_2_dns_security": 0.98,
+    "layer_3_network": 0.98,
+    "layer_4_ssl_tls": 0.98,
+    "layer_5_headers_cdn": 0.95,
+    "layer_6_tech_stack": 0.7,
+    "layer_7_marketing": 0.95,
+    "layer_8_site_structure": 0.85,
+    "layer_9_github_dev": 0.75
+  },
+  "evidence_provenance": {
+    "layer_1_whois": {
+      "source": "RDAP",
+      "status": "VERIFIED"
+    },
+    "layer_2_dns_security": {
+      "source": "Authoritative DNS (dnspython)",
+      "status": "VERIFIED"
+    },
+    "layer_3_network": {
+      "source": "Socket / Shodan InternetDB",
+      "status": "VERIFIED"
+    },
+    "layer_4_ssl_tls": {
+      "source": "Native TLS Handshake Context",
+      "status": "VERIFIED"
+    },
+    "layer_5_headers_cdn": {
+      "source": "HTTP Response Headers",
+      "status": "VERIFIED"
+    },
+    "layer_6_tech_stack": {
+      "source": "DOM & Script Signature Analysis",
+      "status": "BASE_ONLY"
+    },
+    "layer_7_marketing": {
+      "source": "HTML Pixel Regex Matcher",
+      "status": "VERIFIED"
+    },
+    "layer_8_site_structure": {
+      "source": "BeautifulSoup4 HTML/JSON-LD Parser",
+      "status": "VERIFIED"
+    },
+    "layer_9_github_dev": {
+      "source": "GitHub Org REST API",
+      "status": "NO_PUBLIC_ORG"
+    }
+  },
+  "layer_1_whois_rdap": {
+    "domain": "smartbugmedia.com",
+    "registrar": "GoDaddy.com, LLC",
+    "creation_date": "2008-07-08",
+    "name_servers": [
+      "ns1903.hostgator.com",
+      "ns1904.hostgator.com"
+    ],
+    "registrant_org": "Privacy Protected",
+    "query_source": "RDAP"
+  },
+  "layer_2_dns_security": {
+    "domain": "smartbugmedia.com",
+    "mx_records": [
+      "aspmx2.googlemail.com",
+      "alt1.aspmx.l.google.com",
+      "aspmx3.googlemail.com",
+      "alt2.aspmx.l.google.com",
+      "aspmx.l.google.com"
+    ],
+    "email_provider": "Google Workspace",
+    "spf": {
+      "status": "valid",
+      "record": "v=spf1 ip4:167.114.81.0/27 ip4:192.99.195.192/26 ip4:149.56.162.32/27 include:_spf.google.com include:142915.spf07.hubspotemail.net include:mailgun.org ~all",
+      "lookup_count": 3,
+      "has_all_qualifier": true
+    },
+    "dmarc": {
+      "status": "configured",
+      "policy": "quarantine",
+      "record": "v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@smartbugmedia.com"
+    },
+    "dkim_selectors_found": [
+      "google",
+      "default",
+      "k1",
+      "s1"
+    ],
+    "has_ipv6": true,
+    "caa_records": []
+  },
+  "layer_3_network_infra": {
+    "domain": "smartbugmedia.com",
+    "ip_addresses": [
+      "199.60.103.16"
+    ],
+    "reverse_dns": [],
+    "open_ports": [
+      80,
+      443,
+      2052,
+      2053,
+      2082,
+      2083,
+      2086,
+      2087,
+      2095,
+      2096,
+      8080,
+      8443,
+      8880
+    ],
+    "cpes": [
+      "cpe:/a:cloudflare:cloudflare"
+    ],
+    "vulns": [],
+    "hostnames": [],
+    "tags": [
+      "cdn"
+    ],
+    "shodan_accessible": true
+  },
+  "layer_4_ssl_cert": {
+    "domain": "smartbugmedia.com",
+    "ssl_active": true,
+    "tls_version": "TLSv1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "issuer_org": "Google Trust Services",
+    "issuer_common_name": "WE1",
+    "valid_from": "Jun 30 15:34:12 2026 GMT",
+    "valid_until": "Sep 28 16:34:01 2026 GMT",
+    "subject_alt_names": [
+      "smartbugmedia.com"
+    ]
+  },
+  "layer_5_headers_fingerprint": {
+    "domain": "smartbugmedia.com",
+    "status_code": 200,
+    "server_banner": "cloudflare",
+    "detected_cdn": [
+      "Cloudflare"
+    ],
+    "hosting_platform": "Unknown",
+    "framework_header": null,
+    "security_headers": {
+      "strict_transport_security": true,
+      "content_security_policy": true,
+      "x_frame_options": false,
+      "x_content_type_options": false,
+      "referrer_policy": true,
+      "permissions_policy": false
+    },
+    "security_posture_score": 50,
+    "raw_interesting_headers": {
+      "server": "cloudflare",
+      "cf-ray": "a2ea48d38c26de22-LIS"
+    }
+  },
+  "layer_6_tech_stack": {
+    "domain": "smartbugmedia.com",
+    "cms": "Custom / Headless",
+    "frontend_frameworks": [],
+    "ui_libraries": [],
+    "backend_signals": [
+      "Generator: HubSpot"
+    ],
+    "ecommerce": null
+  },
+  "layer_7_marketing_pixels": {
+    "runs_paid_ads": false,
+    "detected_pixels": [],
+    "marketing_stack": [
+      "Google Tag Manager",
+      "HubSpot Marketing"
+    ],
+    "tag_manager_present": true
+  },
+  "layer_8_site_structure": {
+    "domain": "smartbugmedia.com",
+    "page_title": "Full Service Digital Agency | Most Decorated HubSpot Elite Partner | SmartBug Media®",
+    "meta_description": "SmartBug Media is a full service HubSpot agency creating resilient growth at every phase of the customer lifecycle to deliver predictable revenue for our clients.",
+    "og_title": "Full Service Digital Agency | Most Decorated HubSpot Elite Partner | SmartBug Media®",
+    "og_description": "SmartBug Media is a full service HubSpot agency creating resilient growth at every phase of the customer lifecycle to deliver predictable revenue for our clients.",
+    "og_image": "https://www.smartbugmedia.com/hubfs/hp-feature-img.jpg",
+    "json_ld_types": [],
+    "core_headings": [
+      "All SystemsMarketing SystemsSales SystemsRevOps SystemsWeb SystemsCustomer SystemsCommerce Systems, Grow.",
+      "The World's Most Decorated HubSpot Digital Agency.",
+      "We Know Where You Grow from Here.",
+      "Centered on Excellence",
+      "Successful Launches",
+      "Unmatched Expertise, Uncompromising Quality."
+    ],
+    "has_robots_txt": true,
+    "has_sitemap_xml": true,
+    "canonical_url": "https://www.smartbugmedia.com"
+  },
+  "layer_9_github_signals": {
+    "org_name": "smartbugmedia",
+    "public_repos": 0,
+    "top_languages": []
+  },
+  "layer_10_signal_grounded_angles": [
+    {
+      "pillar": "Infrastructure Integration & Mail Flow",
+      "factual_trigger": "Domain operates on Google Workspace with strict DMARC QUARANTINE policy (google, default selectors).",
+      "angle_thesis": "Hardened mail security postures require zero-friction DKIM/SPF alignment when integrating external workflow automation.",
+      "sample_hook": "Noticed SmartBug Media maintains a hardened Google Workspace setup with strict DMARC QUARANTINE enforcement. When connecting external data or enrichment tooling into your workflow, how do you handle DKIM selector alignment without compromising sender reputation?"
+    },
+    {
+      "pillar": "Analytics Stack & Data Pipeline Enrichment",
+      "factual_trigger": "Marketing and analytics event routing detected: Google Tag Manager, HubSpot Marketing.",
+      "angle_thesis": "Modern customer data pipelines benefit from passing raw technographic signals directly into event streams rather than relying on static form fills.",
+      "sample_hook": "Noticed SmartBug Media's web setup routes events through Google Tag Manager, HubSpot Marketing. Are you currently enriching incoming lead events with live technographic/DNS signals at the data layer, or relying mostly on form inputs?"
+    },
+    {
+      "pillar": "Strategic Technical Alignment",
+      "factual_trigger": "Published core product positioning: 'Full Service Digital Agency'.",
+      "angle_thesis": "Aligning technical research automation with published core product focus.",
+      "sample_hook": "Looking into SmartBug Media's core positioning around 'Full Service Digital Agency'—curious how your team currently evaluates technical fit when qualifying new target accounts."
+    }
+  ]
+}
